@@ -9,7 +9,7 @@ if (shell.exec('npm run buildweb').code !== 0) {
 }
 
 
-shell.cp('-Rf', './dist_web/index.js', `../appconda/system/bios`);
+shell.cp('-Rf', './dist_web/index.js', `../server/system/bios`);
 
 
 shell.cd('..');

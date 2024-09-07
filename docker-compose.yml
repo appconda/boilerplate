@@ -67,9 +67,9 @@ services:
       - realmocean-config:/storage/config:rw
       - realmocean-certificates:/storage/certificates:rw
       - realmocean-functions:/storage/functions:rw
-      - ./appconda/system:/usr/src/code/app/realmocean/system
-      - ./appconda/images:/usr/src/code/app/realmocean/images
-      - ./appconda/index.html:/usr/src/code/app/realmocean/realm/index.html
+      - ./server/system:/usr/src/code/app/realmocean/system
+      - ./server/images:/usr/src/code/app/realmocean/images
+      - ./server/index.html:/usr/src/code/app/realmocean/realm/index.html
     depends_on:
       - mariadb
       - redis

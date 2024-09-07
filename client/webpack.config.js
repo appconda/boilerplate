@@ -72,7 +72,7 @@ const webConfig = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    { loader: "ts-loader", options: { configFile: 'web.tsconfig.json' } },
+                    { loader: "ts-loader", options: { configFile: 'tsconfig.json' } },
                     { loader: "ifdef-loader", options: opts }
                 ],
                 exclude: /node_modules/,

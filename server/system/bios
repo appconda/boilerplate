@@ -468,61 +468,6 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
-/***/ "./src/MainController.ts":
-/*!*******************************!*\
-  !*** ./src/MainController.ts ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MainController": () => (/* binding */ MainController)
-/* harmony export */ });
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
-/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/+routes */ "./src/routes/+routes.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var MainController = /** @class */ (function (_super) {
-    __extends(MainController, _super);
-    function MainController() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    MainController.prototype.LoadBiosView = function () {
-        return ((0,_routes_routes__WEBPACK_IMPORTED_MODULE_1__.Routes)()
-        /*  ScrollView({ axes: cVertical, alignment: cTopLeading })(
-            ReactView(
-                <div>
-                 
-                    <button onClick={() => refreshToken()}>Open Picker</button>
-                    <GoogleDrive token={token}></GoogleDrive>
-                </div>
-            )
-        )  */
-        );
-    };
-    return MainController;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.BiosController));
-
-
-
-/***/ }),
-
 /***/ "./src/routes/+routes.ts":
 /*!*******************************!*\
   !*** ./src/routes/+routes.ts ***!
@@ -540,6 +485,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./@/* /+controller */ "./src/routes/@/*/+controller.ts");
 /* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./@/+controller */ "./src/routes/@/+controller.ts");
 /* harmony import */ var _setup_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./@/setup/+controller */ "./src/routes/@/setup/+controller.ts");
+/* harmony import */ var _logout_controller__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./@/logout/+controller */ "./src/routes/@/logout/+controller.ts");
+
 
 
 
@@ -549,7 +496,7 @@ __webpack_require__.r(__webpack_exports__);
 var Routes = function () {
     return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)(
     // Application routes
-    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/@', _controller__WEBPACK_IMPORTED_MODULE_4__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('*', _controller__WEBPACK_IMPORTED_MODULE_3__.HomeController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('setup', _setup_controller__WEBPACK_IMPORTED_MODULE_5__.SetupController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _signup_controller__WEBPACK_IMPORTED_MODULE_2__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController)));
+    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/@', _controller__WEBPACK_IMPORTED_MODULE_4__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('', _controller__WEBPACK_IMPORTED_MODULE_3__.HomeController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('setup', _setup_controller__WEBPACK_IMPORTED_MODULE_5__.SetupController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _signup_controller__WEBPACK_IMPORTED_MODULE_2__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _logout_controller__WEBPACK_IMPORTED_MODULE_6__.LogoutController)));
 };
 
 
@@ -592,11 +539,13 @@ var HomeController = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HomeController.prototype.LoadView = function () {
-        var _a = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__.useListRealms)(), realms = _a.realms, isLoading = _a.isLoading;
+        var me = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__.useGetMe)('console').me;
+        // const { realms, isLoading } = useListRealms();
         //  console.log('Error -- :' + error?.code)
-        return (isLoading ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Loading...') :
-            realms.length === 0 ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UINavigate)('/setup') :
-                (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Home'));
+        return (
+        /* isLoading ? Text('Loading...') :
+            realms.length === 0 ? UINavigate('/setup') : */
+        (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Hello ' + (me === null || me === void 0 ? void 0 : me.name)));
     };
     return HomeController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIController));
@@ -698,22 +647,73 @@ var LoginController = /** @class */ (function (_super) {
         var _c = (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.useState)(''), email = _c[0], setEmail = _c[1];
         var _d = (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.useState)(''), password = _d[0], setPassword = _d[1];
         return (isLoading ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Fragment)() :
-            me != null ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main') :
+            me != null ? (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/@') :
                 (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.HStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.HStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIImage)('/images/login_image.webp')).width('50%'), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.VStack)({ alignment: _tuval_forms__WEBPACK_IMPORTED_MODULE_0__.cLeading, spacing: 10 })((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('Email').fontSize(16), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.TextField)().fontSize(16).padding(10).onChange(function (e) { return setEmail(e); }), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('Password').fontSize(16), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.SecureField)().fontSize(16).padding(10).onChange(function (e) { return setPassword(e); }), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.VStack)({ spacing: 10 })((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Button)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('Login')).width('50%')
                     .onClick(function () {
                     createEmailSession({
                         email: email,
                         password: password
                     }, function () {
-                        navigate('/main');
+                        navigate('/@');
                     });
                 }), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('or'), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Button)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('SignUp')).width('50%')
                     .onClick(function () {
                     navigate('/signup');
-                })).height(), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main')).width('50%').padding(100)));
+                })).height(), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/@')).width('50%').padding(100)));
     };
     return LoginController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
+
+
+
+/***/ }),
+
+/***/ "./src/routes/@/logout/+controller.ts":
+/*!********************************************!*\
+  !*** ./src/routes/@/logout/+controller.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "LogoutController": () => (/* binding */ LogoutController)
+/* harmony export */ });
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @realmocean/sdk */ "@realmocean/sdk");
+/* harmony import */ var _realmocean_sdk__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
+/* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__);
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var LogoutController = /** @class */ (function (_super) {
+    __extends(LogoutController, _super);
+    function LogoutController() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    LogoutController.prototype.LoadView = function () {
+        var deleteSession = (0,_realmocean_sdk__WEBPACK_IMPORTED_MODULE_0__.useDeleteSession)('console').deleteSession;
+        var navigate = (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
+        (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+            deleteSession({ sessionId: 'current' }, function () { return window.location.href = '/login'; });
+        }, []);
+        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.VStack)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Spinner)(), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.Text)('Logging out...')));
+    };
+    return LogoutController;
+}(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.UIController));
 
 
 
@@ -817,9 +817,9 @@ var SignupController = /** @class */ (function (_super) {
                 createEmailSession({
                     email: email,
                     password: password
-                }, function () { return navigate('/main'); });
+                }, function () { return navigate('/@'); });
             });
-        }), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/main')).width('50%').padding(100)));
+        }), isError && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)(error === null || error === void 0 ? void 0 : error.message), isSuccess && (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UINavigate)('/@')).width('50%').padding(100)));
     };
     return SignupController;
 }(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
@@ -943,7 +943,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tuval/forms */ "@tuval/forms");
 /* harmony import */ var _tuval_forms__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _css_global_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./css/global.scss */ "./src/css/global.scss");
-/* harmony import */ var _MainController__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./MainController */ "./src/MainController.ts");
+/* harmony import */ var _routes_routes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./routes/+routes */ "./src/routes/+routes.ts");
+var __extends = (undefined && undefined.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 
 
 
@@ -962,7 +977,17 @@ window.onpopstate = history.onpushstate = function (e) {
     _tuval_core__WEBPACK_IMPORTED_MODULE_0__.EventBus.Default.fire('history.changed', { url: window.location.href });
 };
 window.addEventListener("load", function (event) {
-    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.StartBios)(_MainController__WEBPACK_IMPORTED_MODULE_3__.MainController);
+    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.StartBios)(/** @class */ (function (_super) {
+        __extends(class_1, _super);
+        // Kickstart controller
+        function class_1() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        class_1.prototype.LoadBiosView = function () {
+            return ((0,_routes_routes__WEBPACK_IMPORTED_MODULE_3__.Routes)());
+        };
+        return class_1;
+    }(_tuval_forms__WEBPACK_IMPORTED_MODULE_1__.BiosController)));
 });
 
 })();

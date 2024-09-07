@@ -4,6 +4,7 @@ import { SignupController } from "./@/signup/+controller"
 import { HomeController } from "./@/*/+controller"
 import { LayoutController } from "./@/+controller"
 import { SetupController } from "./@/setup/+controller"
+import { LogoutController } from "./@/logout/+controller"
 
 
 export const Routes = () => {
@@ -11,13 +12,13 @@ export const Routes = () => {
         UIRoutes(
             // Application routes
             UIRoute('/@', LayoutController).children(
-                 UIRoute('*', HomeController),
+                 UIRoute('', HomeController),
                  UIRoute('setup', SetupController),
             ),
            
             UIRoute('/login', LoginController),
             UIRoute('/signup', SignupController),
-            UIRoute('/logout', LoginController),
+            UIRoute('/logout', LogoutController),
             
         ) 
     )

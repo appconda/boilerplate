@@ -1,8 +1,8 @@
 import { EventBus } from '@tuval/core';
-import { StartBios } from '@tuval/forms';
+import { BiosController, StartBios, UIView } from '@tuval/forms';
 
 import './css/global.scss';
-import { MainController } from './MainController';
+import { Routes } from './routes/+routes';
 
 
 (function (history: any) {
@@ -28,6 +28,17 @@ window.onpopstate = (history as any).onpushstate = function (e) {
 
 
 window.addEventListener("load", (event) => {
-    StartBios(MainController);
-  
+
+    
+    StartBios(
+        // Kickstart controller
+        class extends BiosController {
+            public override LoadBiosView(): UIView {
+                return (
+                    Routes()
+                )
+            }
+        }
+    );
+
 });

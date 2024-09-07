@@ -14,7 +14,7 @@ export class LoginController extends UIController {
 
         return (
             isLoading ? Fragment() :
-                me != null ? UINavigate('/main') :
+                me != null ? UINavigate('/@') :
                     HStack(
                         HStack(
                             UIImage('/images/login_image.webp')
@@ -33,7 +33,7 @@ export class LoginController extends UIController {
                                             email: email,
                                             password: password
                                         }, () => {
-                                            navigate('/main')
+                                            navigate('/@')
                                         })
                                     }),
                                 Text('or'),
@@ -45,7 +45,7 @@ export class LoginController extends UIController {
                                     })
                             ).height(),
                             isError && Text(error?.message),
-                            isSuccess && UINavigate('/main')
+                            isSuccess && UINavigate('/@')
                         ).width('50%').padding(100)
                     )
 

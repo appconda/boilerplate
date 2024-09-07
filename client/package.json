@@ -102,7 +102,7 @@
         ]
     },
     "devDependencies": {
-        "@realmocean/sdk": "^1.0.26",
+        "@realmocean/sdk": "^1.0.183",
         "@tuval/cg": "^0.0.16",
         "@tuval/core": "^0.0.103",
         "@tuval/forms": "^1.0.133",

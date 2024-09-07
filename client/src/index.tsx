@@ -28,8 +28,6 @@ window.onpopstate = (history as any).onpushstate = function (e) {
 
 
 window.addEventListener("load", (event) => {
-
-    
     StartBios(
         // Kickstart controller
         class extends BiosController {

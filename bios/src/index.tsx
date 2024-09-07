@@ -2,7 +2,6 @@ import { EventBus } from '@tuval/core';
 import { StartBios } from '@tuval/forms';
 
 import './css/global.scss';
-import { Routes } from './routes/+routes';
 import { MainController } from './MainController';
 
 

@@ -6,23 +6,10 @@ import { LayoutController } from "./@/+controller"
 import { SetupController } from "./@/setup/+controller"
 
 
-class KontDrakula extends UIController {
-    LoadView(): UIView {
-        return (
-            UIRouteOutlet().width('100%').height('100%')
-        )
-    }
-}
-class AddController extends UIController {
-    LoadView(): UIView {
-        return (
-            Text('asdfdf')
-        )
-    }
-}
 export const Routes = () => {
     return (
         UIRoutes(
+            // Application routes
             UIRoute('/@', LayoutController).children(
                  UIRoute('*', HomeController),
                  UIRoute('setup', SetupController),

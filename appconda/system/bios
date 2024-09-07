@@ -540,49 +540,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./@/* /+controller */ "./src/routes/@/*/+controller.ts");
 /* harmony import */ var _controller__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./@/+controller */ "./src/routes/@/+controller.ts");
 /* harmony import */ var _setup_controller__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./@/setup/+controller */ "./src/routes/@/setup/+controller.ts");
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 
 
 
 
 
 
-var KontDrakula = /** @class */ (function (_super) {
-    __extends(KontDrakula, _super);
-    function KontDrakula() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    KontDrakula.prototype.LoadView = function () {
-        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRouteOutlet)().width('100%').height('100%'));
-    };
-    return KontDrakula;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
-var AddController = /** @class */ (function (_super) {
-    __extends(AddController, _super);
-    function AddController() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    AddController.prototype.LoadView = function () {
-        return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.Text)('asdfdf'));
-    };
-    return AddController;
-}(_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIController));
 var Routes = function () {
-    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/@', _controller__WEBPACK_IMPORTED_MODULE_4__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('*', _controller__WEBPACK_IMPORTED_MODULE_3__.HomeController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('setup', _setup_controller__WEBPACK_IMPORTED_MODULE_5__.SetupController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _signup_controller__WEBPACK_IMPORTED_MODULE_2__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController)));
+    return ((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoutes)(
+    // Application routes
+    (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/@', _controller__WEBPACK_IMPORTED_MODULE_4__.LayoutController).children((0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('*', _controller__WEBPACK_IMPORTED_MODULE_3__.HomeController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('setup', _setup_controller__WEBPACK_IMPORTED_MODULE_5__.SetupController)), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/login', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/signup', _signup_controller__WEBPACK_IMPORTED_MODULE_2__.SignupController), (0,_tuval_forms__WEBPACK_IMPORTED_MODULE_0__.UIRoute)('/logout', _login_controller__WEBPACK_IMPORTED_MODULE_1__.LoginController)));
 };
 
 

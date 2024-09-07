@@ -1,6 +1,6 @@
-## Realmocean Development Boilerplate
+## Appconda Development Boilerplate
 
-### realmocean folder 
+### bios folder 
 
 ### bios folder
 Bios development folder. Write your bios here

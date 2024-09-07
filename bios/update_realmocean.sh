@@ -1,0 +1,1 @@
+npm uninstall @realmocean/sdk && npm install @realmocean/sdk--save-dev

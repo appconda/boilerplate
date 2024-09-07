@@ -1,0 +1,79 @@
+
+
+
+
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 14px;
+
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+html,
+body {
+
+  margin: 0px;
+
+  padding: 0;
+  border: 0;
+
+  color: #505A64;
+  height: 100%;
+  -webkit-user-select: none;
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+   -webkit-font-smoothing: subpixel-antialiased !important; 
+/*  -webkit-font-smoothing: antialiased;
+*/
+  text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+
+}
+
+body {
+  cursor: var(--system-cursor-default), auto;
+
+  font-family: var(--font-family);
+  font-size: 1rem;
+
+  //-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+u {
+  text-decoration: none;
+}
+
+* {
+  /*-webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+  box-sizing: border-box;
+}

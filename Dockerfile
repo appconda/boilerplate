@@ -26,7 +26,7 @@ COPY ./installer /install/data
 
 COPY ./installer/.env /install/data/.env
 
-COPY ./realmocean /install/realmocean
+COPY ./server /install/realmocean
 
 RUN ls -ll /install/data
 

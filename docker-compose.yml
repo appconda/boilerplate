@@ -206,7 +206,7 @@ services:
       - realmocean
 
     volumes:
-      - ./realmocean/services:/usr/app/src/services
+      - ./server/services:/usr/app/src/services
 
     environment:
       - _APP_NAME
@@ -336,7 +336,7 @@ services:
       - realmocean
 
     volumes:
-      - ./realmocean/ai_components:/server/src/components
+      - ./server/ai_components:/server/src/components
 
     environment:
       - _APP_NAME

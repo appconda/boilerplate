@@ -23,7 +23,7 @@
         "buildall": "node shell_all.js",
         "buildwp": "node shell_wp.js",
         "buildnode": "webpack --config webpack.node.config.js",
-        "buildweb": "webpack --config webpack.web.config.js",
+        "buildweb": "webpack --config webpack.config.js",
         "buildwebprod": "webpack --config webpack.web.prod.config.js",
         "build": "node shell.js",
         "watch": "node watch.js",
